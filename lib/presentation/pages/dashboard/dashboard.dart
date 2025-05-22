@@ -43,7 +43,26 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           color: AppColors.secondaryColor,
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Column(children: [Text('Мои заявки')]),
+                        child: Column(
+                          children: [
+                            Text('Мои заявки'),
+                            DataTable(
+                              columnSpacing: defaultPadding,
+                              columns: [
+                                DataColumn(label: Text('№')),
+                                DataColumn(label: Text('Дата')),
+                                DataColumn(label: Text('ИИН')),
+                                DataColumn(label: Text('Статус')),
+                              ],
+                              rows: [
+                                creditCard(),
+                                creditCard(),
+                                creditCard(),
+                                creditCard(),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -55,6 +74,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ],
         ),
       ),
+    );
+  }
+
+  DataRow creditCard() {
+    return DataRow(
+      cells: [
+        DataCell(Text('230240')),
+        DataCell(Text('230241')),
+        DataCell(Text('230242')),
+        DataCell(Text('230242')),
+      ],
     );
   }
 }
