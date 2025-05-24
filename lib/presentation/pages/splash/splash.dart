@@ -1,6 +1,7 @@
 import 'package:broker_desk/core/configs/theme/app_colors.dart';
-import 'package:broker_desk/presentation/pages/main_screen/main_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../auth_page/auth_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -33,7 +34,7 @@ class _SplashPageState extends State<SplashPage> {
     await Future.delayed(Duration(seconds: 2));
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (BuildContext context) => MainScreen()),
+      MaterialPageRoute(builder: (BuildContext context) => AuthPage()),
     );
   }
 }

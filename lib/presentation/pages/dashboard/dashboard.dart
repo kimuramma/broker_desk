@@ -22,56 +22,58 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: SingleChildScrollView(
-        padding: EdgeInsets.all(defaultPadding),
-        child: Column(
-          children: [
-            Header(),
-            SizedBox(height: defaultPadding),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  flex: 5,
-                  child: Column(
-                    children: [
-                      MyOrders(),
-                      SizedBox(height: defaultPadding),
-                      Container(
-                        padding: EdgeInsets.all(defaultPadding),
-                        decoration: BoxDecoration(
-                          color: AppColors.secondaryColor,
-                          borderRadius: BorderRadius.circular(10),
+      child: Scaffold(
+        body: SingleChildScrollView(
+          padding: EdgeInsets.all(defaultPadding),
+          child: Column(
+            children: [
+              Header(),
+              SizedBox(height: defaultPadding),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    flex: 5,
+                    child: Column(
+                      children: [
+                        MyOrders(),
+                        SizedBox(height: defaultPadding),
+                        Container(
+                          padding: EdgeInsets.all(defaultPadding),
+                          decoration: BoxDecoration(
+                            color: AppColors.secondaryColor,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Column(
+                            children: [
+                              Text('Мои заявки'),
+                              DataTable(
+                                columnSpacing: defaultPadding,
+                                columns: [
+                                  DataColumn(label: Text('№')),
+                                  DataColumn(label: Text('Дата')),
+                                  DataColumn(label: Text('ИИН')),
+                                  DataColumn(label: Text('Статус')),
+                                ],
+                                rows: [
+                                  creditCard(),
+                                  creditCard(),
+                                  creditCard(),
+                                  creditCard(),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                        child: Column(
-                          children: [
-                            Text('Мои заявки'),
-                            DataTable(
-                              columnSpacing: defaultPadding,
-                              columns: [
-                                DataColumn(label: Text('№')),
-                                DataColumn(label: Text('Дата')),
-                                DataColumn(label: Text('ИИН')),
-                                DataColumn(label: Text('Статус')),
-                              ],
-                              rows: [
-                                creditCard(),
-                                creditCard(),
-                                creditCard(),
-                                creditCard(),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                SizedBox(width: defaultPadding),
-                Expanded(flex: 2, child: Details(dataMap: dataMap)),
-              ],
-            ),
-          ],
+                  SizedBox(width: defaultPadding),
+                  Expanded(flex: 2, child: Details(dataMap: dataMap)),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
