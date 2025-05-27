@@ -1,4 +1,5 @@
 import 'package:broker_desk/constants.dart';
+import 'package:broker_desk/presentation/pages/apply_lead_page/apply_lead_page.dart';
 import 'package:flutter/material.dart';
 
 class MyOrders extends StatelessWidget {
@@ -19,7 +20,14 @@ class MyOrders extends StatelessWidget {
                   vertical: defaultPadding,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => ApplyLeadPage(),
+                  ),
+                );
+              },
               label: Text('Новая заявка', style: TextStyle(fontSize: 12)),
               icon: Icon(Icons.add),
             ),

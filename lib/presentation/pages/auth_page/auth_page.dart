@@ -1,6 +1,6 @@
 import 'package:broker_desk/constants.dart';
 import 'package:broker_desk/presentation/pages/auth_page/widgets/text_field_widget.dart';
-import 'package:broker_desk/presentation/pages/main_screen/main_screen.dart';
+import 'package:broker_desk/presentation/pages/orders_page/main_screen.dart';
 import 'package:flutter/material.dart';
 
 class AuthPage extends StatelessWidget {
