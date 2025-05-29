@@ -1,4 +1,4 @@
-import 'package:broker_desk/presentation/pages/dashboard/widgets/profile_card.dart';
+import 'package:broker_desk/presentation/widgets/profile_card.dart';
 import 'package:flutter/material.dart';
 
 import 'search_field.dart';
