@@ -1,4 +1,4 @@
-import 'package:broker_desk/constants.dart';
+import 'package:broker_desk/presentation/widgets/app_button.dart';
 import 'package:flutter/material.dart';
 
 class MyOrders extends StatelessWidget {
@@ -12,17 +12,7 @@ class MyOrders extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text('Мои заявки', style: TextStyle(fontSize: 18)),
-            ElevatedButton.icon(
-              style: TextButton.styleFrom(
-                padding: EdgeInsets.symmetric(
-                  horizontal: defaultPadding * 1.5,
-                  vertical: defaultPadding,
-                ),
-              ),
-              onPressed: () {},
-              label: Text('Новая заявка', style: TextStyle(fontSize: 12)),
-              icon: Icon(Icons.add),
-            ),
+            AppButton(labelText: 'Новая заявка', icon: Icon(Icons.add)),
           ],
         ),
       ],
