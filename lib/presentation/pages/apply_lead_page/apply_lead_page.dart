@@ -47,9 +47,32 @@ class _ApplyLeadPageState extends State<ApplyLeadPage> {
               Container(
                 margin: EdgeInsets.all(defaultPadding),
                 padding: EdgeInsets.symmetric(horizontal: defaultPadding),
+
+                child: InputDecorator(
+                  decoration: InputDecoration(
+                    labelText: 'Продукт',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(color: Colors.grey),
+                    ),
+                  ),
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton(
+                      isExpanded: true,
+                      value: value,
+                      items: products.map(buildMenuProducts).toList(),
+                      onChanged: (value) => setState(() => this.value = value),
+                    ),
+                  ),
+                ),
+              ),
+
+              Container(
+                margin: EdgeInsets.all(defaultPadding),
+                padding: EdgeInsets.symmetric(horizontal: defaultPadding),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  border: Border.all(),
+                  border: Border.all(color: Colors.grey, width: 1.0),
                 ),
                 child: DropdownButtonHideUnderline(
                   child: DropdownButton(
@@ -65,6 +88,7 @@ class _ApplyLeadPageState extends State<ApplyLeadPage> {
                   ),
                 ),
               ),
+
               AppButton(labelText: 'Оформить заявку'),
             ],
           ),
